@@ -10,7 +10,13 @@ const actions = (() => {
             ADD_CART: 'ADD_CART',
             INCREASE_ITEM: 'INCREASE_ITEM',
             DECREASE_ITEM: 'DECREASE_ITEM',
-            SUM_ITEM: 'SUM_ITEM'
+            SUM_ITEM: 'SUM_ITEM',
+            REMOVE_ITEM: 'REMOVE_ITEM',
+            EMPTY_CART: 'EMPTY_CART'
+        },
+        ORDER: {
+            CONFIRM_ORDER: 'CONFIRM_ORDER',
+            CONFIRMING: 'CONFIRMING'
         }
     };
 })();

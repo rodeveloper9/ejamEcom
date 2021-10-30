@@ -1,9 +1,9 @@
 import Constants from './../constant/index';
-import { getLocalStorage, setLocalStorage, msgToaster } from '../utils/utils';
+import { getLocalStorage, setLocalStorage, msgToaster, deleteLocalStorage } from '../utils/utils';
 
 const initialState = {
     cartData: getLocalStorage('cartItem') || [],
-    cartSum: 0
+    cartSum: getLocalStorage('total') || 0
 };
 
 const CartReducer = (state = initialState, action) => {
@@ -46,9 +46,28 @@ const CartReducer = (state = initialState, action) => {
             const totalSum = state.cartData
                 .reduce((total, product) => total + product.price * product.quantity, 0)
                 .toFixed(2);
+            setLocalStorage('total', totalSum)
             return {
                 ...state,
                 cartSum: totalSum
+            };
+        case Constants.CART.REMOVE_ITEM:
+            _cartData = [
+                ...state.cartData.filter(
+                    (item) => item.id !== action.payload.id
+                ),
+            ]
+            msgToaster('Item removed from cart', 3000, 'success')
+            setLocalStorage('cartItem', _cartData);
+            return {
+                ...state,
+                cartData: _cartData
+            };
+        case Constants.CART.EMPTY_CART:
+            deleteLocalStorage('cartItem');
+            return {
+                ...state,
+                cartData: []
             };
         default:
             return state;

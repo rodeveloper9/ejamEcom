@@ -1,16 +1,22 @@
 import Constants from './../constant/index';
 
 const initialState = {
-    listingData: {}
+    orderId: '',
+    isConfirm: false
 };
 
 const ListingReducer = (state = initialState, action) => {
     const { response = {} } = action;
     switch (action.type) {
-        case Constants.LIST.GET_LIST:
+        case Constants.ORDER.CONFIRM_ORDER:
             return {
                 ...state,
-                listingData: response.data
+                orderId: response.id
+            };
+        case Constants.ORDER.CONFIRMING:
+            return {
+                ...state,
+                isConfirm: true
             };
         default:
             return state;

@@ -40,6 +40,17 @@
 /* ---------------- Application CSS ----------------*/
 
 /* Common CSS */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 h1,h2,h3,h4,h5,h5,h6,p {
   margin: 10px 0;
   color: #333;
@@ -55,6 +66,8 @@ h1,h2,h3,h4,h5,h5,h6,p {
   cursor: pointer;
   border: 0;
   margin-top: 10px;
+  text-decoration: none;
+  display: inline-block;
 }
 /* // Error toaster custom css */
 #notification-wrapper .toast-notification {width: 100% !important;}
@@ -142,6 +155,7 @@ h1,h2,h3,h4,h5,h5,h6,p {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-sizing: border-box;
 }
 .cartItem_img {
   max-height: 104px;
@@ -195,5 +209,36 @@ h1,h2,h3,h4,h5,h5,h6,p {
 }
 .items_price {
   font-size: 2em;
+}
+
+/* Checkout page css */
+.ejamCheckout_content {
+  display: flex;
+  padding: 16px;
+  box-sizing: border-box;
+}
+.ejamCheckout_card {
+  width: 50%;
+  border-right: 1px solid #ccc;
+  padding: 16px 16px 0 0;
+  box-sizing: border-box;
+}
+.ejamCheckout_detail {
+  width: 50%;
+}
+.ejamCheckout_btnWrap {
+  margin-top: 2rem;
+}
+.ejamCheckout_card_details {
+    width: 70%;
+    margin: auto;
+}
+
+/* input box css */
+.inputWrap_input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-bottom: 16px;
 }
 

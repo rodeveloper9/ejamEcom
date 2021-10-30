@@ -6,13 +6,24 @@ import ApiConfig from "./apiConfig";
  * @return JSON
  */
 const _buildReqData = options => {
-    const { api = "", urlAppend = "" } = options;
+    const { content = '', api = "", urlAppend = "" } = options;
     const apiDetail = ApiConfig[api];
     const { method, url = '' } = apiDetail;
     const apiUrl = `${url}${urlAppend}`;
+    let postData = {};
+    if (method == "POST") {
+        postData = setPostData(content);
+    }
     return {
         url: apiUrl,
-        method
+        method,
+        ...postData
+    };
+};
+
+const setPostData = content => {
+    return {
+        data: content
     };
 };
 

@@ -19,7 +19,7 @@ const MainView = (props) => {
                 component={Listing}
                 render={() => <Redirect to="/" />}
             />
-            <Route exact path="/checkout" component={Checkout} />
+            <Route exact path="/shipping" component={Checkout} />
         </Container>
     );
 };

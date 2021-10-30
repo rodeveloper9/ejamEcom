@@ -38,7 +38,26 @@ const cartSum = () => {
     };
 }
 
+const removeItem = (data) => {
+    return (dispatch) => {
+        dispatch({
+            type: Constants.CART.REMOVE_ITEM,
+            payload: data
+        });
+        dispatch(cartSum());
+    };
+}
+
+const emptyCart = () => {
+    return (dispatch) => {
+        dispatch({
+            type: Constants.CART.EMPTY_CART
+        });
+        dispatch(cartSum());
+    };
+}
+
 
 export {
-    addtoCart, increaseItem, decreaseItem, cartSum
+    addtoCart, increaseItem, decreaseItem, cartSum, removeItem, emptyCart
 }

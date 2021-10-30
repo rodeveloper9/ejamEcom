@@ -7,7 +7,8 @@ import FullPageLoader from "../common/loader/FullpageLoader";
 
 const ProductListing = () => {
     const { listReducer = {} } = useSelector((state) => state);
-    const { listingData = [] } = listReducer;
+    const { listingData = {} } = listReducer;
+    const { products = [] } = listingData;
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -25,7 +26,7 @@ const ProductListing = () => {
     return (
         <Fragment>
             <div className="items_wrap">
-                {listingData.length ? listingData.map((items, index) => {
+                {products.length ? products.map((items, index) => {
                     return <Fragment key={index}>
                         <ListingItem
                             data={items}
