@@ -1,0 +1,199 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------------- Application CSS ----------------*/
+
+/* Common CSS */
+h1,h2,h3,h4,h5,h5,h6,p {
+  margin: 10px 0;
+  color: #333;
+}
+.ejamBtn {
+  padding: 10px 16px;
+  white-space: nowrap;
+  background-image: linear-gradient(90deg,#27115A,#6f5e97);
+  transition: all .5s ease;
+  color: #fff;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+  border: 0;
+  margin-top: 10px;
+}
+/* // Error toaster custom css */
+#notification-wrapper .toast-notification {width: 100% !important;}
+#notification-wrapper .toast-notification span {width: 100% !important;font-weight: bold !important;}
+/* Header CSS */
+.ejamHeader {
+  background: #27115A;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  box-sizing: border-box;
+  box-shadow: 0 0 5px rgb(0 0 0 / 30%);
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+.ejamHeader_logo {
+  max-width: 100px;
+}
+.ejamHeader_content {
+  position: relative;
+  cursor: pointer;
+}
+.ejamHeader_content_count {
+  color: #fff;
+  font-size: 10px;
+  position: absolute;
+  background: red;
+  padding: 3px 6px;
+  border-radius: 50%;
+  top: -6px;
+  left: -9px;
+}
+.cartDetail {
+  height: auto;
+  max-height: 80vh;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background: #fff;
+  overflow-x: hidden;
+  box-shadow: 1px 1px 10px -1px #aaa;
+  transition: -webkit-transform .6s cubic-bezier(0,.52,0,1);
+  transition: transform .6s cubic-bezier(0,.52,0,1);
+  transition: transform .6s cubic-bezier(0,.52,0,1),-webkit-transform .6s cubic-bezier(0,.52,0,1);
+}
+.cartDetail.hide {
+  width: 0;
+  -webkit-transform: translate3d(100vw,0,0);
+  transform: translate3d(100vw,0,0);
+}
+.cartDetail.show {
+  width: 40%;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  padding: 16px;
+  border-radius: 0 0 4px 4px;
+}
+.cartDetail.show .cartDetail_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 12px;
+  font-weight: 700;
+}
+.cartDetail.show .cartDetail_top.amount {
+  border-bottom: 0;
+  border-top: 1px solid #ccc;
+  padding-top: 12px;
+  justify-content: space-around;
+  font-size: 1.2rem;
+  margin-top: 16px;
+}
+.cartDetail.show .cartDetail_closeBtn {
+  margin: 0;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+.cartItem {
+  padding: 12px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cartItem_img {
+  max-height: 104px;
+  max-width: 20%;
+}
+.cartItem_detail {
+  width: 40%;
+}
+.cartItem_price {
+  width: 20%;
+  margin: 28px 0 0;
+}
+.cartItem_qty {
+  padding: 12px;
+  display: inline-block;
+}
+.cartItem_btn {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  color: #271159;
+  background-color: #e5e5e5;
+  cursor: pointer;
+  font-weight: 700;
+  border: 1px solid #27115A;
+}
+.cartItem_price {
+  width: 20%;
+  margin: 28px 0 0;
+}
+.cartItem_price, .cartItem_text {
+  font-size: .9rem;
+  color: #333;
+  font-weight: 700;
+}
+
+/* Listing CSS */
+.items_wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+.items_list {
+  width: 28%;
+  box-shadow: 0px 0px 3px 5px rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+  padding: 25px;
+  margin: 10px;
+  border-radius: 5px;
+}
+.items_img {
+  max-height: 200px;
+}
+.items_price {
+  font-size: 2em;
+}
+
