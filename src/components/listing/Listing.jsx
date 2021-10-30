@@ -4,6 +4,7 @@ import getListingData from './../../actions/listingAction';
 import { addtoCart, increaseItem } from './../../actions/cartAction';
 import ListingItem from './ListingItem';
 import FullPageLoader from "../common/loader/FullpageLoader";
+import Header from '../header/header';
 
 const ProductListing = () => {
     const { listReducer = {} } = useSelector((state) => state);
@@ -25,6 +26,7 @@ const ProductListing = () => {
 
     return (
         <Fragment>
+            <Header />
             <div className="items_wrap">
                 {products.length ? products.map((items, index) => {
                     return <Fragment key={index}>

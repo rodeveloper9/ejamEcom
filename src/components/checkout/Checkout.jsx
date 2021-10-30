@@ -55,6 +55,11 @@ const Checkout = () => {
 
     return (
         <Fragment>
+            <div style={{ textAlign: "left", paddingLeft: '16px' }}>
+                <Link to={`/`} className="ejamBtn">
+                    Back to shop
+                </Link>
+            </div>
             <div className="ejamCheckout">
                 {isOrderConfirm ?
                     isConfirm ?
